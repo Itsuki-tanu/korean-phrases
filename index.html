@@ -16,17 +16,18 @@
 <div id="phrases"></div>
 
 <script>
+const baseURL = "https://username.github.io/repo-name/audio/"; // ←自分のGitHub PagesのURLに置き換える
 const phrases = [
-  {kr:"① 이름이 뭐예요?", jp:"あなたの名前は何ですか？", src:"audio/1.mp3"},
-  {kr:"② 고향은 어디예요?", jp:"故郷はどこですか？", src:"audio/2.mp3"},
-  {kr:"③ 어디에 살고 있어요?", jp:"どこに住んでいますか？", src:"audio/3.mp3"},
-  {kr:"④ 잘 지내요?", jp:"元気ですか？", src:"audio/4.mp3"},
-  {kr:"⑤ 당신은요?", jp:"あなたは？", src:"audio/5.mp3"},
-  {kr:"⑥ 만나서 반갑습니다", jp:"お会いできてうれしいです", src:"audio/6.mp3"},
-  {kr:"⑦ 뭐 하고 있어요?", jp:"何をしていますか？", src:"audio/7.mp3"},
-  {kr:"⑧ 한국어 할 줄 알아요?", jp:"韓国語を話せますか？", src:"audio/8.mp3"},
-  {kr:"⑨ 왜 한국어를 공부하고 있어요?", jp:"なぜ韓国語を勉強しているのですか？", src:"audio/9.mp3"},
-  {kr:"⑩ 왜냐하면 좋아하기 때문입니다", jp:"なぜなら好きだからです", src:"audio/10.mp3"}
+  {kr:"① 이름이 뭐예요?", jp:"あなたの名前は何ですか？", src:"1.mp3"},
+  {kr:"② 고향은 어디예요?", jp:"故郷はどこですか？", src:"2.mp3"},
+  {kr:"③ 어디에 살고 있어요?", jp:"どこに住んでいますか？", src:"3.mp3"},
+  {kr:"④ 잘 지내요?", jp:"元気ですか？", src:"4.mp3"},
+  {kr:"⑤ 당신은요?", jp:"あなたは？", src:"5.mp3"},
+  {kr:"⑥ 만나서 반갑습니다", jp:"お会いできてうれしいです", src:"6.mp3"},
+  {kr:"⑦ 뭐 하고 있어요?", jp:"何をしていますか？", src:"7.mp3"},
+  {kr:"⑧ 한국어 할 줄 알아요?", jp:"韓国語を話せますか？", src:"8.mp3"},
+  {kr:"⑨ 왜 한국어를 공부하고 있어요?", jp:"なぜ韓国語を勉強しているのですか？", src:"9.mp3"},
+  {kr:"⑩ 왜냐하면 좋아하기 때문입니다", jp:"なぜなら好きだからです", src:"10.mp3"}
 ];
 
 const container = document.getElementById("phrases");
@@ -38,7 +39,7 @@ phrases.forEach((p,i)=>{
     <button onclick="toggleTranslation('t${i}')">日本語訳</button>
     <p id="t${i}" class="translation">${p.jp}</p>
     <button onclick="playAudio('a${i}')">▶ 音声</button>
-    <audio id="a${i}" src="${p.src}"></audio>
+    <audio id="a${i}" src="${baseURL + p.src}"></audio>
   `;
   container.appendChild(div);
 });
